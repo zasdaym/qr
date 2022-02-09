@@ -16,6 +16,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: gh-pages
           commit-message: Update
-          files: public
+          force-add: "true"
+          files: public/
           name: zasdaym
           email: zasdaym@gmail.com
