@@ -11,12 +11,9 @@ jobs:
       - run: |
           npm ci
           npm run build
-      - uses: github-actions-x/commit@v2.8
+      - uses: EndBug/add-and-commit@v8
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: gh-pages
-          commit-message: Update
-          force-add: "true"
-          files: public/
-          name: zasdaym
-          email: zasdaym@gmail.com
+          add: public/
+          default_author: user_info
+          message: Update
+          new_branch: gh-pages
