@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          npm ci
+          npm run build
+      - uses: github-actions-x/commit@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: gh-pages
+          commit-message: Update
+          files: public
+          name: zasdaym
+          email: zasdaym@gmail.com
